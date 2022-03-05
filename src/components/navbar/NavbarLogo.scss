@@ -1,0 +1,19 @@
+.logo {
+  a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-text {
+    font-size: 2rem;
+    color: #fefefe;
+  }
+
+  .logo-image {
+    width: 45px;
+    height: 45px;
+    margin-right: 1rem;
+  }
+}

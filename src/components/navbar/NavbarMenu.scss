@@ -1,0 +1,44 @@
+.navbar-menu {
+  display: flex;
+  align-items: center;
+
+  .menu {
+    display: flex;
+    list-style-type: none;
+
+    .menu-item a {
+      cursor: pointer;
+      text-decoration: none;
+      color: #fff;
+      margin-left: 1rem;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: limegreen;
+      }
+      .active {
+        color: limegreen;
+      }
+    }
+  }
+
+  .login-btn {
+    background-color: #434343;
+    color: #ddd;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    height: 100%;
+    margin-left: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: limegreen;
+      color: #000;
+    }
+  }
+}
