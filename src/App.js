@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/navbar/Navbar";
-import { Main } from "./components/main/Main";
 import { Footer } from "./components/footer/Footer";
 import { Homepage } from "./components/homepage/Homepage";
 import { Exchanges } from "./components/exchanges/Exchanges";
@@ -13,10 +12,10 @@ export const App = () => {
   return (
     <div className="app">
       <Navbar />
-      <Main />
+      <Homepage />
       <div className="content">
         <Routes>
-          <Route path="/" component={Homepage} />
+          {/* <Route path="/" component={Homepage} /> */}
           <Route path="/exchanges" component={Exchanges} />
           <Route path="/cryptocurrencies" component={Cryptocurrencies} />
           <Route path="/crypto/:coinId" component={CryptoDetails} />
