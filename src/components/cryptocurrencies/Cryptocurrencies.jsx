@@ -11,10 +11,12 @@ export const Cryptocurrencies = ({ simplified }) => {
   const [cryptos, setCryptos] = useState(cryptosList?.data?.coins);
   // console.log(cryptos);
 
+  if (isFetching) return <span>Loading...</span>;
+
   return (
     <div className="cryptocurrencies">
       <CoinRowHeaders />
-      {cryptos.map((currency) => (
+      {cryptos?.map((currency) => (
         <Coin currency={currency} key={currency.id}></Coin>
       ))}
     </div>
