@@ -35,7 +35,7 @@ export const Cryptocurrencies = ({ simplified }) => {
       )}
       <CoinRowHeaders />
       {cryptos?.map((currency) => (
-        <Coin currency={currency} key={currency.id}></Coin>
+        <Coin currency={currency} key={currency.uuid}></Coin>
       ))}
     </div>
   );

@@ -1,0 +1,12 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #323232;
+  border-radius: 20px;
+
+  a {
+    text-decoration: none;
+    color: #fefefe;
+  }
+}

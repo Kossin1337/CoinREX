@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import "./Coin.scss";
 
 export const Coin = ({ currency }) => {
-  console.log(currency);
-
   const cryptoNameDisplay =
     currency.name === currency.symbol
       ? currency.name
@@ -14,7 +12,7 @@ export const Coin = ({ currency }) => {
   const cryptoChangeColor = currency.change > 0 ? "green" : "red";
 
   return (
-    <div className="coin-row">
+    <div className="coin-row" key={currency.uuid}>
       <div className="coin-header">
         <span className="name">{cryptoNameDisplay}</span>
         <img className="image" src={currency.iconUrl} alt="" />
