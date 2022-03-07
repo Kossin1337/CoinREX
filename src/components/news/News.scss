@@ -1,7 +1,15 @@
 .news-wrapper {
   margin: 1rem 0;
   width: 80vw;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+
+  .select-news {
+    margin-bottom: 2rem;
+    width: 300px;
+  }
+
+  .news-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
 }

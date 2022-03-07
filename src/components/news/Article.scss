@@ -1,12 +1,58 @@
 .article {
+  text-decoration: none;
+  color: #fefefe;
   display: flex;
   flex-direction: column;
+  align-items: space-between;
   padding: 1rem;
   background-color: #323232;
   border-radius: 20px;
+  transition: all 0.15s ease;
 
-  a {
-    text-decoration: none;
-    color: #fefefe;
+  &:hover {
+    .content {
+      .title {
+        color: yellowgreen;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 1.25rem;
+    }
+
+    .description {
+      margin: 1rem 0;
+      color: #ddd;
+    }
+  }
+
+  .provider {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+
+    .provider-info {
+      display: flex;
+      align-items: center;
+
+      .provider-img {
+        width: 25px;
+        height: 25px;
+        border-radius: 2px;
+      }
+
+      .provider-name {
+        margin-left: 0.5rem;
+      }
+    }
+
+    .provider-date {
+      margin-top: 1rem;
+    }
   }
 }

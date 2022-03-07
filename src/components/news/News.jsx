@@ -1,22 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import Select from "react-select";
 import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
+import { useGetCryptosQuery } from "../../services/cryptoAPI";
 import { Article } from "./Article";
+
 import "./News.scss";
 
 export const News = ({ simplified }) => {
+  const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
+
+  /* Using RT to get data from Crypto news API */
   const { data: cryptoNews } = useGetCryptoNewsQuery({
-    newsCategory: "Cryptocurrency",
+    newsCategory,
     count: simplified ? 3 : 9,
   });
-  console.log(cryptoNews);
+
+  /* Using RT to get data from Crypto (coins) API */
+  const { data } = useGetCryptosQuery(100);
+  const options = data?.data?.coins.map((coin) => ({
+    value: coin.name,
+    label: coin.name,
+  }));
 
   if (!cryptoNews?.value) return "Loading...";
 
   return (
     <div className="news-wrapper">
-      {cryptoNews.value.map((news, i) => (
-        <Article info={news} key={i} />
-      ))}
+      {!simplified && (
+        <Select
+          className="select-news"
+          placeholder="Select Cryptocurrency"
+          options={options}
+          onChange={({ value }) => {
+            setNewsCategory(value);
+          }}
+        />
+      )}
+      <div className="news-container">
+        {cryptoNews.value.map((news, i) => (
+          <Article info={news} key={i} />
+        ))}
+      </div>
     </div>
   );
 };
