@@ -2,6 +2,12 @@
   width: 80vw;
   margin: 1rem 0;
 
+  .sub-title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: yellowgreen;
+  }
+
   .crypto-detail-container {
     display: flex;
     align-items: center;
@@ -10,10 +16,19 @@
       width: 30px;
       height: 30px;
     }
+
     .title {
       margin-left: 1rem;
+      font-weight: 500;
+      font-size: 1.75rem;
+      color: limegreen;
+    }
+
+    .price {
+      margin: 0;
+      font-weight: 400;
       font-size: 1.5rem;
-      // color: limegreen;
+      margin-left: 1rem;
     }
 
     .rank {
@@ -46,6 +61,8 @@
     .stats-title {
       text-align: center;
       margin: 0.5rem 0 1.5rem 0;
+      font-weight: 400;
+      font-size: 1.5rem;
     }
 
     .stats-row {
@@ -80,17 +97,51 @@
     .links-row {
       text-decoration: none;
       color: #fefefe;
+      display: flex;
 
       .link-info {
-        .stats-row-value {
-          width: 80px;
-          height: 80px;
-          border-right: 2px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .link-icon {
+          .icon-i {
+            font-size: 1.5rem;
+            padding: 0 0.75rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #000;
+          }
         }
-        .stats-row-title {
-          margin-left: 2rem;
+
+        .link-name {
+          margin-left: 0.75rem;
+          font-size: 1.2rem;
         }
       }
+    }
+  }
+  .coin-description {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 1.25rem;
+      color: yellowgreen;
+      font-weight: 400;
+      margin: 1.25rem 0 0.5rem 0;
+    }
+    p {
+      color: #eee;
+    }
+
+    a {
+      color: yellowgreen;
+      text-decoration: none;
+      font-weight: 500;
     }
   }
 }

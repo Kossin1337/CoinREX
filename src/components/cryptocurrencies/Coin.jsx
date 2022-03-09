@@ -23,7 +23,9 @@ export const Coin = ({ currency }) => {
         <span className="rank">#{currency.rank}</span>
       </div>
       <div className="coin-data">
-        <span className="info">{millify(currency.price)}</span>
+        <span className="info">
+          {millify(currency.price, { precision: 2 })}
+        </span>
         <span className="info">{millify(currency.marketCap)}</span>
         <span className={`info ${cryptoChangeColor}`}>
           {millify(currency.change)}%
