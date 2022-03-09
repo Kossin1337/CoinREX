@@ -1,0 +1,96 @@
+.crypto-details {
+  width: 80vw;
+  margin: 1rem 0;
+
+  .crypto-detail-container {
+    display: flex;
+    align-items: center;
+
+    .crypto-symbol {
+      width: 30px;
+      height: 30px;
+    }
+    .title {
+      margin-left: 1rem;
+      font-size: 1.5rem;
+      // color: limegreen;
+    }
+
+    .rank {
+      margin-left: auto;
+      font-size: 1.25rem;
+    }
+  }
+
+  .crypto-chart {
+    .select-time {
+      width: 300px;
+    }
+  }
+
+  .statistics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .stats-col {
+    width: 400px;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #232323;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+
+    .stats-title {
+      text-align: center;
+      margin: 0.5rem 0 1.5rem 0;
+    }
+
+    .stats-row {
+      padding: 0.75rem 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #000;
+
+      .stats-row-title {
+        font-size: 1.1rem;
+      }
+
+      .stats-row-value {
+        font-size: 1.5rem;
+      }
+
+      &:hover {
+        background-color: #323232;
+      }
+    }
+
+    .stats-row:last-child {
+      border-bottom: 1px solid #000;
+    }
+  }
+
+  .links-col {
+    width: 100%;
+
+    .links-row {
+      text-decoration: none;
+      color: #fefefe;
+
+      .link-info {
+        .stats-row-value {
+          width: 80px;
+          height: 80px;
+          border-right: 2px solid #000;
+        }
+        .stats-row-title {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+}

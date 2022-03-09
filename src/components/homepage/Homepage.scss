@@ -8,7 +8,7 @@
 
     .home-heading-container {
       margin: 1.5rem 0;
-      
+
       .header {
         display: flex;
         justify-content: space-between;
@@ -35,6 +35,11 @@
             text-decoration: none;
             color: #fefefe;
           }
+        }
+
+        .title {
+          font-weight: 500;
+          color: yellowgreen;
         }
       }
     }

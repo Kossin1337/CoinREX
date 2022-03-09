@@ -12,7 +12,11 @@ export const Coin = ({ currency }) => {
   const cryptoChangeColor = currency.change > 0 ? "green" : "red";
 
   return (
-    <div className="coin-row" key={currency.uuid}>
+    <Link
+      to={`/crypto/${currency.uuid}`}
+      className="coin-row"
+      key={currency.uuid}
+    >
       <div className="coin-header">
         <span className="name">{cryptoNameDisplay}</span>
         <img className="image" src={currency.iconUrl} alt="" />
@@ -26,6 +30,6 @@ export const Coin = ({ currency }) => {
         </span>
         <span className="info">{millify(currency.price)}</span>
       </div>
-    </div>
+    </Link>
   );
 };

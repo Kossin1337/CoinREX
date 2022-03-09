@@ -6,6 +6,12 @@
     display: flex;
     list-style-type: none;
 
+    .menu-item {
+      .active {
+        color: limegreen;
+      }
+    }
+
     .menu-item a {
       cursor: pointer;
       text-decoration: none;
@@ -14,10 +20,7 @@
       transition: all 0.2s ease;
 
       &:hover {
-        color: limegreen;
-      }
-      .active {
-        color: limegreen;
+        color: lime;
       }
     }
   }
