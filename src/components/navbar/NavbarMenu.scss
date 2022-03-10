@@ -2,8 +2,13 @@
   display: flex;
   align-items: center;
 
+  .menu-icon {
+    display: none;
+  }
+
   .menu {
     display: flex;
+    align-items: center;
     list-style-type: none;
 
     .menu-item {
@@ -43,5 +48,38 @@
       background-color: limegreen;
       color: #000;
     }
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .menu {
+      margin-top: 1rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+
+      .menu-item {
+        width: 100%;
+        margin: 0;
+        padding: 0.5rem 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .false {
+    display: none;
+  }
+
+  .true {
+    display: flex;
   }
 }

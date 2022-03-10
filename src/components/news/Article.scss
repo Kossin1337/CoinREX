@@ -56,3 +56,11 @@
     }
   }
 }
+
+@media (max-width: 860px) {
+  .news-wrapper {
+    .news-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

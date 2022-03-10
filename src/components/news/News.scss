@@ -13,3 +13,19 @@
     grid-gap: 2rem;
   }
 }
+
+@media (max-width: 1460px) {
+  .news-wrapper {
+    .news-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .news-wrapper {
+    .news-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

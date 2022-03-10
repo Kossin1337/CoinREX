@@ -19,18 +19,19 @@ export const Coin = ({ currency }) => {
     >
       <div className="coin-header">
         <span className="name">{cryptoNameDisplay}</span>
+        <span className="symbol">{currency.symbol}</span>
         <img className="image" src={currency.iconUrl} alt="" />
         <span className="rank">#{currency.rank}</span>
       </div>
       <div className="coin-data">
-        <span className="info">
+        <span className="info price">
           {millify(currency.price, { precision: 2 })}
         </span>
-        <span className="info">{millify(currency.marketCap)}</span>
-        <span className={`info ${cryptoChangeColor}`}>
+        <span className="info market-cap">{millify(currency.marketCap)}</span>
+        <span className={`info 24h ${cryptoChangeColor}`}>
           {millify(currency.change)}%
         </span>
-        <span className="info">{millify(currency.price)}</span>
+        <span className="info volume24h">{millify(currency.price)}</span>
       </div>
     </Link>
   );

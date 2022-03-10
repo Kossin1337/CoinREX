@@ -9,5 +9,30 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .navbar-mobile {
+      .menu-icon {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar-wrapper {
+    .navbar {
+      flex-direction: column;
+
+      .navbar-mobile {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .menu-icon {
+          display: flex;
+        }
+      }
+    }
   }
 }

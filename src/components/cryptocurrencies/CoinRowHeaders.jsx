@@ -7,10 +7,10 @@ export const CoinRowHeaders = () => {
         <span className="header-text">Coin Info</span>
       </div>
       <div className="coin-data">
-        <span className="header-text">Price</span>
-        <span className="header-text">Market Cap</span>
-        <span className="header-text">24H</span>
-        <span className="header-text">24H Volume</span>
+        <span className="header-text price">Price</span>
+        <span className="header-text market-cap">Market Cap</span>
+        <span className="header-text 24h">24H</span>
+        <span className="header-text volume24h">24H Volume</span>
       </div>
     </div>
   );
