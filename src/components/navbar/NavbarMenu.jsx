@@ -13,9 +13,12 @@ export const NavbarMenu = () => {
         <li className="menu-item">
           <NavLink to="/cryptocurrencies">Cryptocurrencies</NavLink>
         </li>
+        {/* <li className="menu-item">
+          <NavLink to="/markets">Markets</NavLink>
+        </li>
         <li className="menu-item">
           <NavLink to="/exchanges">Exchanges</NavLink>
-        </li>
+        </li> */}
         <li className="menu-item">
           <NavLink to="/news">News</NavLink>
         </li>

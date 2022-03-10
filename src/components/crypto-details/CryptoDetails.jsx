@@ -159,7 +159,7 @@ export const CryptoDetails = () => {
       <div className="crypto-chart">
         <Select
           className="select-time"
-          placeholder="Select Time"
+          placeholder="Select Time (default 7 days)"
           options={timeOptions}
           onChange={({ value }) => {
             setTimePeriod(value);

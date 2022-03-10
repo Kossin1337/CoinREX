@@ -38,6 +38,7 @@ export const LineChart = ({ coinHistory, currentPrice, coinName }) => {
       )
     );
   }
+
   console.log(coinPrice);
   console.log(coinTimestamp);
   /* WORKING  ^^ */
@@ -51,6 +52,9 @@ export const LineChart = ({ coinHistory, currentPrice, coinName }) => {
         fill: false,
         backgroundColor: "limegreen",
         borderColor: "limegreen",
+        borderWidth: 2,
+        tension: 0.25,
+        spanGaps: true,
       },
     ],
   };
@@ -71,28 +75,22 @@ export const LineChart = ({ coinHistory, currentPrice, coinName }) => {
       },
     },
     scales: {
-      xAxes: [
-        {
-          id: "x",
+      x: {
+        display: true,
+        title: {
           display: true,
-          title: {
-            display: true,
-            text: "Timestamp",
-          },
+          text: "Timestamp",
         },
-      ],
-      yAxes: [
-        {
-          id: "y",
+      },
+
+      y: {
+        display: true,
+        title: {
           display: true,
-          title: {
-            display: true,
-            text: "Coin Price",
-          },
-          suggestedMin: 0,
-          suggestedMax: currentPrice * 1.1,
+          text: "Coin Price",
         },
-      ],
+        suggestedMax: currentPrice * 1.1,
+      },
     },
   };
 
