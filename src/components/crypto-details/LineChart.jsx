@@ -24,7 +24,6 @@ ChartJS.register(
 );
 
 export const LineChart = ({ coinHistory, currentPrice, coinName }) => {
-  /* WORKING vv */
   console.log(coinHistory);
   const coinPrice = [];
   const coinTimestamp = [];
@@ -38,10 +37,6 @@ export const LineChart = ({ coinHistory, currentPrice, coinName }) => {
       )
     );
   }
-
-  console.log(coinPrice);
-  console.log(coinTimestamp);
-  /* WORKING  ^^ */
 
   const data = {
     labels: coinTimestamp,
@@ -93,22 +88,6 @@ export const LineChart = ({ coinHistory, currentPrice, coinName }) => {
       },
     },
   };
-
-  // const config = {
-  //   data: data,
-  //   options: {
-  //     responsive: true,
-  //     plugins: {
-  //       legend: {
-  //         position: "top",
-  //       },
-  //       title: {
-  //         display: true,
-  //         text: "Chart.js Line Chart",
-  //       },
-  //     },
-  //   },
-  // };
 
   return (
     <div className="chart">
