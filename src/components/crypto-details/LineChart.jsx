@@ -24,7 +24,6 @@ ChartJS.register(
 );
 
 export const LineChart = ({ coinHistory, currentPrice, coinName }) => {
-  console.log(coinHistory);
   const coinPrice = [];
   const coinTimestamp = [];
 

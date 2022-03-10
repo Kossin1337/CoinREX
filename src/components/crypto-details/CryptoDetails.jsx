@@ -10,7 +10,7 @@ import Select from "react-select";
 
 import { LineChart } from "./LineChart";
 
-/* icons imports */
+/* Font Awesome icons imports */
 import {
   FaDiscord,
   FaCode,
@@ -30,9 +30,6 @@ import {
 
 import "./CryptoDetails.scss";
 
-/* COMMENTS FOR LATER */
-/* CHANGING THE TIME PERIOD MAKES THE cryptoDetails fetch again - PREVENT IT */
-
 export const CryptoDetails = () => {
   const [timePeriod, setTimePeriod] = useState("7d");
   const { coinId } = useParams();
@@ -42,7 +39,6 @@ export const CryptoDetails = () => {
     timePeriod,
   });
   const cryptoDetails = data?.data?.coin;
-  // console.log(data);
 
   if (isFetching) return <span>Loading...</span>;
 
