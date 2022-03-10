@@ -161,6 +161,23 @@ export const CryptoDetails = () => {
             setTimePeriod(value);
             console.log(value);
           }}
+          theme={(theme) => ({
+            ...theme,
+            colors: {
+              ...theme.colors,
+              text: "orange",
+              primary: "limegreen",
+              neutral0: "#212121",
+              primary25: "#323232",
+              primary50: "limegreen",
+              neutral40: "#fefefe",
+              neutral50: "#fefefe",
+              neutral60: "#fefefe",
+              neutral70: "#fefefe",
+              neutral80: "#fefefe",
+              neutral90: "#fefefe",
+            },
+          })}
         />
         <LineChart
           coinHistory={coinHistory}

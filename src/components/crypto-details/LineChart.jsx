@@ -83,7 +83,6 @@ export const LineChart = ({ coinHistory, currentPrice, coinName }) => {
           display: true,
           text: "Coin Price",
         },
-        suggestedMax: currentPrice * 1.1,
       },
     },
   };

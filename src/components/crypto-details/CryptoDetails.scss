@@ -145,3 +145,57 @@
     }
   }
 }
+
+@media (max-width: 760px) {
+  .crypto-details {
+    .crypto-detail-container {
+      justify-content: space-between;
+      .title {
+        font-size: 1.2rem;
+        margin-right: auto;
+      }
+      .price {
+        font-size: 1.2rem;
+      }
+
+      .rank {
+        display: none;
+      }
+    }
+
+    .crypto-chart {
+      display: none;
+    }
+
+    .links-col {
+      .links-row {
+        .link-info {
+          .link-name {
+            display: none;
+          }
+        }
+        .link {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .crypto-details {
+    .links-col {
+      .links-row {
+        .link-info {
+          .link-name {
+            display: flex;
+            font-size: 1.2rem;
+          }
+        }
+        .link {
+          display: none;
+        }
+      }
+    }
+  }
+}
