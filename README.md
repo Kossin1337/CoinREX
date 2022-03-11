@@ -1,4 +1,5 @@
 ### Live demo: https://coinrex.netlify.app/  
+##### to see current project state go to 'production' branch
 
 #### Tech stack & libraries used:  
 React.js - my goto library (framework - if that doesn't offent anyone)  
