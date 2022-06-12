@@ -1,0 +1,87 @@
+.sidebar {
+  height: 100%;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+
+  .menu {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+
+    .menu-item {
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #161616;
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #fefefe;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .text {
+          margin-left: 0.75rem;
+        }
+
+        .svg-box {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 1.25rem;
+          margin-left: 2rem;
+          border-radius: 5px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          background-color: #101010;
+
+          svg {
+            height: 30px;
+          }
+        }
+      }
+
+      .active {
+        color: limegreen;
+        background-color: #161616;
+      }
+
+      .profile {
+        color: blueviolet;
+      }
+
+      .settings {
+        color: cornflowerblue;
+      }
+
+      .favorite {
+        color: firebrick;
+      }
+
+      .about {
+        color: yellowgreen;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .sidebar {
+    height: 100px; // fixed height menu
+  }
+}

@@ -1,0 +1,38 @@
+.profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .profile-card {
+    display: flex;
+
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #101010;
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 1rem;
+
+      .fullname {
+        font-size: 1.6rem;
+      }
+
+      .nickname {
+        font-size: 1.2rem;
+      }
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 15px;
+    }
+  }
+
+  // .verified-info {
+  //   display: flex;
+  // }
+}
