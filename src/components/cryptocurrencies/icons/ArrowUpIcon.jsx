@@ -1,6 +1,6 @@
 import React from "react";
 
-export const UserIcon = () => {
+export const ArrowUpIcon = () => {
   return (
     <svg
       className="w-6 h-6"
@@ -10,7 +10,7 @@ export const UserIcon = () => {
     >
       <path
         fillRule="evenodd"
-        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
         clipRule="evenodd"
       ></path>
     </svg>

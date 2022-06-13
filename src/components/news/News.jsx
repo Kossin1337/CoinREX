@@ -3,6 +3,7 @@ import Select from "react-select";
 import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../../services/cryptoAPI";
 import { Article } from "./Article";
+import { Loader } from "../loader/Loader";
 
 import "./News.scss";
 
@@ -22,13 +23,7 @@ export const News = ({ simplified }) => {
     label: coin.name,
   }));
 
-  // const customStyles = {
-  //   container: () => ({
-  //     "background-color": "#323232",
-  //   }),
-  // };
-
-  if (!cryptoNews?.value) return "Loading...";
+  if (!cryptoNews?.value) return <Loader />;
 
   return (
     <div className="news-wrapper">
@@ -40,7 +35,6 @@ export const News = ({ simplified }) => {
           onChange={({ value }) => {
             setNewsCategory(value);
           }}
-          // styles={customStyles}
           theme={(theme) => ({
             ...theme,
             colors: {

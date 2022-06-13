@@ -1,6 +1,6 @@
 import React from "react";
 
-export const UserIcon = () => {
+export const EmailUnverifiedIcon = () => {
   return (
     <svg
       className="w-6 h-6"
@@ -10,7 +10,7 @@ export const UserIcon = () => {
     >
       <path
         fillRule="evenodd"
-        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+        d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z"
         clipRule="evenodd"
       ></path>
     </svg>

@@ -13,7 +13,7 @@ export const Sidebar = () => {
     <div className="sidebar">
       <ul className="menu">
         <li className="menu-item">
-          <NavLink to="/profile">
+          <NavLink to="/profile" end>
             <span className="text">Profile</span>
             <div className="svg-box">
               <UserIcon />

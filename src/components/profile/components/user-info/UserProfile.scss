@@ -6,14 +6,15 @@
 
   .profile-card {
     display: flex;
-
     padding: 1rem;
     border-radius: 10px;
     background-color: #101010;
 
     .user-info {
+      height: 80px;
       display: flex;
       flex-direction: column;
+      align-items: space-between;
       margin-left: 1rem;
 
       .fullname {
@@ -22,6 +23,7 @@
 
       .nickname {
         font-size: 1.2rem;
+        color: #ddd;
       }
     }
 
@@ -32,7 +34,58 @@
     }
   }
 
-  // .verified-info {
-  //   display: flex;
-  // }
+  .email-box {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+
+    svg {
+      margin-right: 0.5rem;
+      color: #ccc;
+      width: 30px;
+      height: 30px;
+    }
+
+    .verification {
+      margin-left: 0.5rem;
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .verified {
+      svg {
+        color: yellowgreen;
+      }
+    }
+
+    .unverified {
+      svg {
+        color: orange;
+      }
+    }
+  }
+
+  .sub-box {
+    display: flex;
+    align-items: center;
+
+    .sub {
+      font-size: 1rem;
+    }
+
+    .provider {
+      display: flex;
+    }
+
+    .id {
+      margin-left: 1rem;
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+  }
 }

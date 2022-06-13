@@ -7,6 +7,7 @@ import { Cryptocurrencies } from "./components/cryptocurrencies/Cryptocurrencies
 import { CryptoDetails } from "./components/crypto-details/CryptoDetails";
 import { News } from "./components/news/News";
 import { Profile } from "./components/profile/Profile";
+import { Loader } from "./components/loader/Loader";
 
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -15,7 +16,7 @@ import "./App.scss";
 export const App = () => {
   const { isLoading, isAuthenticated } = useAuth0();
 
-  if (isLoading) return <span>loading...</span>;
+  if (isLoading) return <Loader />;
 
   return (
     <div className="app">

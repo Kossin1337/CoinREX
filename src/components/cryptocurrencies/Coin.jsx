@@ -18,9 +18,9 @@ export const Coin = ({ currency }) => {
       key={currency.uuid}
     >
       <div className="coin-header">
+        <img className="image" src={currency.iconUrl} alt="" />
         <span className="name">{cryptoNameDisplay}</span>
         <span className="symbol">{currency.symbol}</span>
-        <img className="image" src={currency.iconUrl} alt="" />
         <span className="rank">#{currency.rank}</span>
       </div>
       <div className="coin-data">
