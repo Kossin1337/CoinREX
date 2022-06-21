@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
   useGetCryptoDetailsQuery,
@@ -9,6 +9,7 @@ import millify from "millify";
 import Select from "react-select";
 
 import { LineChart } from "./LineChart";
+import { Loader } from "../loader/Loader";
 
 /* Font Awesome icons imports */
 import {
@@ -33,14 +34,23 @@ import "./CryptoDetails.scss";
 export const CryptoDetails = () => {
   const [timePeriod, setTimePeriod] = useState("7d");
   const { coinId } = useParams();
-  const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
+  const { data, isFetching, refetch } = useGetCryptoDetailsQuery(coinId);
   const { data: coinHistory } = useGetCryptoHistoryQuery({
     coinId,
     timePeriod,
   });
   const cryptoDetails = data?.data?.coin;
 
-  if (isFetching) return <span>Loading...</span>;
+  useEffect(() => {
+    const refreshData = setTimeout(() => {
+      console.log(`Refetching coin: ${coinId}`);
+      // const newData = refetch(data.data.coin);
+    }, 15000);
+
+    return () => clearTimeout(refreshData);
+  }, [data]);
+
+  if (isFetching) return <Loader />;
 
   const timeOptions = [
     { value: "3h", label: "3h" },
@@ -69,7 +79,7 @@ export const CryptoDetails = () => {
 
   const iconsColor = {
     discord: "#5865F2",
-    github: "#171515 ",
+    github: "#aaa",
     website: "limegreen",
     telegram: "#6CC1E3",
     reddit: "#FF4500",
@@ -167,14 +177,14 @@ export const CryptoDetails = () => {
               ...theme.colors,
               text: "orange",
               primary: "limegreen",
-              neutral0: "#212121",
-              primary25: "#323232",
+              neutral0: "#202020",
+              primary25: "#323232", // focus
               primary50: "limegreen",
-              neutral40: "#fefefe",
+              neutral40: "#454545",
               neutral50: "#fefefe",
-              neutral60: "#fefefe",
+              neutral60: "limegreen",
               neutral70: "#fefefe",
-              neutral80: "#fefefe",
+              neutral80: "#fefefe", // text (3h, 24h)
               neutral90: "#fefefe",
             },
           })}

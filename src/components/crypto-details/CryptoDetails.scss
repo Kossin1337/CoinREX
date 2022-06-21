@@ -5,7 +5,7 @@
   .sub-title {
     font-size: 1.75rem;
     font-weight: 500;
-    color: yellowgreen;
+    color: limegreen;
   }
 
   .crypto-detail-container {
@@ -53,7 +53,7 @@
     width: 400px;
     margin-top: 2rem;
     padding: 1rem;
-    background-color: #232323;
+    background-color: #151515;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -72,17 +72,20 @@
       justify-content: space-between;
       align-items: center;
       border-top: 1px solid #000;
+      border-radius: 5px;
 
       .stats-row-title {
         font-size: 1.1rem;
+        margin-left: 0.5rem;
       }
 
       .stats-row-value {
         font-size: 1.5rem;
+        margin-right: 0.5rem;
       }
 
       &:hover {
-        background-color: #323232;
+        background-color: #252525;
       }
     }
 
@@ -98,6 +101,7 @@
       text-decoration: none;
       color: #fefefe;
       display: flex;
+      border-radius: 5px;
 
       .link-info {
         display: flex;
@@ -112,6 +116,7 @@
             justify-content: center;
             align-items: center;
             border-right: 1px solid #000;
+            color: lime;
           }
         }
 
@@ -119,6 +124,10 @@
           margin-left: 0.75rem;
           font-size: 1.2rem;
         }
+      }
+
+      .link {
+        margin-right: 0.5rem;
       }
     }
   }
@@ -130,7 +139,7 @@
     h5,
     h6 {
       font-size: 1.25rem;
-      color: yellowgreen;
+      color: limegreen;
       font-weight: 400;
       margin: 1.25rem 0 0.5rem 0;
     }
@@ -139,9 +148,11 @@
     }
 
     a {
-      color: yellowgreen;
+      color: limegreen;
       text-decoration: none;
       font-weight: 500;
+      font-size: 0.95rem;
+      margin: 0 0.25rem;
     }
   }
 }

@@ -8,6 +8,7 @@ import "./UserProfile.scss";
 
 export const UserProfile = () => {
   const { user } = useAuth0();
+  console.log(user);
 
   /* sub info */
   const subInfo = user?.sub.split("|");
@@ -42,6 +43,7 @@ export const UserProfile = () => {
         <div className="sub provider">{subInfo[0]}</div>
         <div className="sub id">{subInfo[1]}</div>
       </div>
+      {/* <span>{user}</span> */}
       {/* {JSON.stringify(user, null, 2)} */}
     </div>
   );

@@ -8,17 +8,10 @@ import { News } from "../news/News";
 import "./Homepage.scss";
 
 export const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery(10);
-  const globalStats = data?.data?.stats;
-
-  // console.log(data);
-
-  if (isFetching) return "Loading...";
-
   return (
     <div className="main-wrapper">
       <div className="main">
-        <CryptoStats stats={globalStats} />
+        <CryptoStats />
         <div className="home-heading-container">
           <div className="header">
             <h2 className="title">Top 10 Cryptocurrencies</h2>

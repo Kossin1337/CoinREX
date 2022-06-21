@@ -1,35 +1,181 @@
-.crypto-stats {
-  margin: 1rem 0;
+.crypto-stats-wrapper {
+  // margin: 1rem 0;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 
   .title {
+    width: 100%;
     margin: 1rem 0;
     font-size: 1.5rem;
     font-weight: 500;
     color: yellowgreen;
   }
 
-  .menu {
-    width: 100%;
-    margin: 1.5rem 0;
-    padding: 0;
-    list-style-type: none;
+  .crypto-stats {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
 
-    .menu-item {
+    .menu {
+      width: 100%;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style-type: none;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
 
-      .menu-title {
-        font-size: 1.2rem;
+      .menu-item {
+        padding: 1rem 0.5rem;
+        min-width: 220px;
+        background-color: #151515;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 3px solid;
+
+        .menu-title {
+          font-size: 1.2rem;
+          color: #ccc;
+        }
+
+        .menu-ammount {
+          margin-top: 0.5rem;
+          font-size: 1.75rem;
+          font-weight: 500;
+          // color: limegreen;
+        }
       }
 
-      .menu-ammount {
-        font-size: 1.75rem;
+      .total-crypto {
+        color: #f60000;
+        border-color: rgba(246, 0, 0, 0.75);
+      }
+
+      .total-exchanges {
+        color: #ff8c00;
+        border-color: rgba(255, 140, 0, 0.9);
+      }
+
+      .total-market-cap {
+        color: #ffee00;
+        border-color: rgba(255, 238, 0, 0.75);
+      }
+
+      .total-24h-volume {
+        color: #4de94c;
+        border-color: rgba(77, 233, 76, 0.75);
+      }
+
+      .total-markets {
+        color: #3783ff;
+        border-color: rgba(55, 131, 255, 0.75);
+      }
+
+      .bitcoin-dominance {
+        color: #4815aa;
+        border-color: rgba(72, 21, 170, 0.75);
+      }
+    }
+
+    .coins {
+      display: flex;
+      flex-direction: column;
+      margin-left: 2rem;
+      width: 520px;
+      gap: 1rem;
+      justify-content: space-between;
+
+      .coin-display {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        background-color: #151515;
+        border-radius: 15px;
+
+        .header {
+          font-size: 1.2rem;
+          color: limegreen;
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+
+        .coin {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          color: #fefefe;
+          border-radius: 5px;
+          border-bottom: 1px solid #454545;
+          padding: 0.75rem 1rem;
+
+          img {
+            width: 42px;
+            height: 42px;
+          }
+
+          .info {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .info-coin-data {
+              margin-left: 1rem;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+
+              .name {
+                font-size: 1.1rem;
+                text-align: left;
+              }
+
+              .symbol {
+                color: limegreen;
+                font-weight: 600;
+              }
+            }
+
+            .id {
+              color: #ddd;
+            }
+          }
+
+          &:hover {
+            background-color: #252525;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .crypto-stats-wrapper {
+    .crypto-stats {
+      flex-direction: column;
+      .menu {
+        width: 100%;
+      }
+
+      .coins {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .crypto-stats-wrapper {
+    .crypto-stats {
+      .menu {
+        width: 100%;
       }
     }
   }

@@ -5,12 +5,6 @@ import "./Cryptocurrencies.scss";
 
 import { useGetCryptosQuery } from "../../services/cryptoAPI";
 
-// enum SortingDirection {
-//   ASCENDING = "ASCENDING",
-//   DESCENDING = "DESCENDING",
-//   UNSORTED = "UNSORTED"
-// }
-
 const defaultSortOrder = {
   name: "unsorted",
   price: "unsorted",
@@ -22,11 +16,11 @@ const defaultSortOrder = {
 export const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortOrder, setSortOrder] = useState(defaultSortOrder);
 
   const { data: cryptosList, refetch, isFetching } = useGetCryptosQuery(count);
+  const [filteredCryptos, setFilteredCryptos] = useState();
   const [cryptos, setCryptos] = useState([]);
-
-  const [sortOrder, setSortOrder] = useState(defaultSortOrder);
 
   /* refetch the data after 15s */
   useEffect(() => {
@@ -44,16 +38,9 @@ export const Cryptocurrencies = ({ simplified }) => {
       coin.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    setFilteredCryptos(filteredData);
     setCryptos(filteredData);
   }, [cryptosList, searchTerm]);
-
-  /* sort data (ASCENDING/DESCENDING/DEFAULT) */
-  // const sortData = (data, sortKey, sortValue) => {
-  //   return data.sort((a, b) => {
-  //     const relevantValueA = a[sortKey];
-  //     const relevantValueB = b[sortKey];
-  //   });
-  // };
 
   /* Sort given column (e.g sortKey = 'marketCap') */
   const sortColumn = (sortKey) => {
@@ -63,37 +50,46 @@ export const Cryptocurrencies = ({ simplified }) => {
         const relevantValueB = b[sortKey];
 
         const currentSortOrder = sortOrder[sortKey];
+        console.log(`Current sort order: ${currentSortOrder}`);
 
         if (currentSortOrder === "unsorted") {
-          setSortOrder((prevSortOrder) => {
-            prevSortOrder[sortKey] = "descending";
-
-            return prevSortOrder;
-          });
-
-          if (relevantValueA < relevantValueB) return -1;
-          if (relevantValueA > relevantValueB) return 1;
-          return 0;
-        } else if (currentSortOrder === "ascending") {
-          setSortOrder((prevSortOrder) => {
-            prevSortOrder[sortKey] = "ascending";
-
-            return prevSortOrder;
-          });
-
-          if (relevantValueA > relevantValueB) return -1;
-          if (relevantValueA < relevantValueB) return 1;
-          return 0;
+          return relevantValueA - relevantValueB;
+        } else if (currentSortOrder === "descending") {
+          return relevantValueB - relevantValueA;
         } else {
-          setSortOrder((prevSortOrder) => {
-            prevSortOrder[sortKey] = "unsorted";
-
-            return prevSortOrder;
-          });
+          return 0;
         }
-
-        console.log(sortOrder);
       });
+
+      /* change sorting order (UNSORT->DESC->ASC-UNSORT->DESC->ASC...) */
+      const order = sortOrder[sortKey];
+
+      if (order === "unsorted") {
+        setSortOrder((prevSort) => {
+          prevSort = defaultSortOrder;
+          prevSort[sortKey] = "descending";
+
+          return prevSort;
+        });
+      }
+
+      if (order === "descending") {
+        setSortOrder((prevSort) => {
+          prevSort = defaultSortOrder;
+          prevSort[sortKey] = "ascending";
+
+          return prevSort;
+        });
+      }
+
+      if (order === "ascending") {
+        setSortOrder((prevSort) => {
+          prevSort = defaultSortOrder;
+          prevSort[sortKey] = "unsorted";
+
+          return prevSort;
+        });
+      }
 
       return [...sortedArray];
     });
@@ -113,7 +109,11 @@ export const Cryptocurrencies = ({ simplified }) => {
           />
         </div>
       )}
-      <CoinList cryptos={cryptos} sortColumn={sortColumn} />
+      <CoinList
+        cryptos={cryptos}
+        sortColumn={sortColumn}
+        sortOrder={sortOrder}
+      />
     </div>
   );
 };
