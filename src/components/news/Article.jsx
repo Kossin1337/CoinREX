@@ -5,7 +5,7 @@ import "./Article.scss";
 import { News } from "./News";
 
 export const Article = ({ info }) => {
-  // console.log(info);
+  console.log(info);
   return (
     <a className="article" href={info.url} target="_blank" rel="noreferrer">
       <div className="content">
