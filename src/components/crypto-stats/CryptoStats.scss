@@ -50,33 +50,33 @@
       }
 
       .total-crypto {
-        color: #f60000;
-        border-color: rgba(246, 0, 0, 0.75);
+        color: #4815aa;
+        border-color: rgba(72, 21, 170, 0.75);
       }
 
       .total-exchanges {
-        color: #ff8c00;
-        border-color: rgba(255, 140, 0, 0.9);
-      }
-
-      .total-market-cap {
-        color: #ffee00;
-        border-color: rgba(255, 238, 0, 0.75);
-      }
-
-      .total-24h-volume {
-        color: #4de94c;
-        border-color: rgba(77, 233, 76, 0.75);
-      }
-
-      .total-markets {
         color: #3783ff;
         border-color: rgba(55, 131, 255, 0.75);
       }
 
+      .total-market-cap {
+        color: #4de94c;
+        border-color: rgba(77, 233, 76, 0.75);
+      }
+
+      .total-24h-volume {
+        color: #ffee00;
+        border-color: rgba(255, 238, 0, 0.75);
+      }
+
+      .total-markets {
+        color: #ff8c00;
+        border-color: rgba(255, 140, 0, 0.9);
+      }
+
       .bitcoin-dominance {
-        color: #4815aa;
-        border-color: rgba(72, 21, 170, 0.75);
+        color: #f60000;
+        border-color: rgba(246, 0, 0, 0.75);
       }
     }
 

@@ -11,7 +11,7 @@ export const News = ({ simplified }) => {
   const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
 
   /* Using RT to get data from Crypto news API */
-  const { data: cryptoNews } = useGetCryptoNewsQuery({
+  const { data: cryptoNews, isFetching } = useGetCryptoNewsQuery({
     newsCategory,
     count: simplified ? 3 : 9,
   });

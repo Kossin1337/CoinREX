@@ -5,6 +5,7 @@ import { Footer } from "./components/footer/Footer";
 import { Homepage } from "./components/homepage/Homepage";
 import { Cryptocurrencies } from "./components/cryptocurrencies/Cryptocurrencies";
 import { CryptoDetails } from "./components/crypto-details/CryptoDetails";
+import { Exchanges } from "./components/exchanges/Exchanges";
 import { News } from "./components/news/News";
 import { Profile } from "./components/profile/Profile";
 import { Loader } from "./components/loader/Loader";
@@ -16,6 +17,9 @@ import "./App.scss";
 export const App = () => {
   const { isLoading, isAuthenticated } = useAuth0();
 
+  console.log(process.env.REACT_APP_API_KEY);
+  console.log("yabadabadoo");
+
   if (isLoading) return <Loader />;
 
   return (
@@ -25,6 +29,7 @@ export const App = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="cryptocurrencies" element={<Cryptocurrencies />} />
         <Route path="crypto/:coinId" element={<CryptoDetails />} />
+        <Route path="exchanges" element={<Exchanges />} />
         <Route path="news" element={<News />} />
         {isAuthenticated && <Route path="profile/*" element={<Profile />} />}
       </Routes>

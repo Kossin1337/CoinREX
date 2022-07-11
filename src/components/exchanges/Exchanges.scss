@@ -1,0 +1,29 @@
+.exchanges-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .exchanges {
+    width: 80%;
+
+    .menu {
+      display: flex;
+      gap: 0.25rem;
+
+      button {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background-color: #151515;
+        color: #fff;
+
+        &:hover {
+          background-color: #252525;
+        }
+      }
+    }
+  }
+}

@@ -1,16 +1,13 @@
 import React from "react";
+import { Loader } from "../loader/Loader";
 import { Link } from "react-router-dom";
 import { useGetGlobalStatsQuery } from "../../services/cryptoAPI";
-import { Loader } from "../loader/Loader";
 import millify from "millify";
 import "./CryptoStats.scss";
 
 export const CryptoStats = () => {
   const { data, isFetching } = useGetGlobalStatsQuery();
   const info = data?.data;
-
-  // millify.options.precision = 3;
-  console.log(millify);
 
   console.log(info);
 
@@ -32,15 +29,11 @@ export const CryptoStats = () => {
           </li>
           <li className="menu-item total-market-cap">
             <span className="menu-title">Total Market Cap</span>
-            <span className="menu-ammount">
-              {millify(info?.totalMarketCap, { precision: 3 })}
-            </span>
+            <span className="menu-ammount">{millify(info?.totalMarketCap, { precision: 3 })}</span>
           </li>
           <li className="menu-item total-24h-volume">
             <span className="menu-title">Total 24H Volume</span>
-            <span className="menu-ammount">
-              {millify(info?.total24hVolume, { precision: 3 })}
-            </span>
+            <span className="menu-ammount">{millify(info?.total24hVolume, { precision: 3 })}</span>
           </li>
           <li className="menu-item total-markets">
             <span className="menu-title">Total Markets</span>
@@ -48,9 +41,7 @@ export const CryptoStats = () => {
           </li>
           <li className="menu-item bitcoin-dominance">
             <span className="menu-title">Bitcoin Dominance</span>
-            <span className="menu-ammount">
-              {info?.btcDominance.toFixed(2)}%
-            </span>
+            <span className="menu-ammount">{info?.btcDominance.toFixed(2)}%</span>
           </li>
         </ul>
 
@@ -59,11 +50,7 @@ export const CryptoStats = () => {
             <span className="header">Best Coins</span>
             {info?.bestCoins.map((bestCoin, index) => {
               return (
-                <Link
-                  to={`/crypto/${bestCoin.uuid}`}
-                  className="coin best-coin"
-                  key={bestCoin.uuid}
-                >
+                <Link to={`/crypto/${bestCoin.uuid}`} className="coin best-coin" key={bestCoin.uuid}>
                   <img src={bestCoin.iconUrl} alt={bestCoin.name} />
                   <div className="info">
                     <div className="info-coin-data">
@@ -81,11 +68,7 @@ export const CryptoStats = () => {
             <span className="header">Newest Coins</span>
             {info?.newestCoins.map((newCoin, index) => {
               return (
-                <Link
-                  to={`/crypto/${newCoin.uuid}`}
-                  className="coin best-coin"
-                  key={newCoin.uuid}
-                >
+                <Link to={`/crypto/${newCoin.uuid}`} className="coin best-coin" key={newCoin.uuid}>
                   <img src={newCoin.iconUrl} alt={newCoin.name} />
                   <div className="info">
                     <div className="info-coin-data">

@@ -18,19 +18,22 @@ export const Cryptocurrencies = ({ simplified }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState(defaultSortOrder);
 
-  const { data: cryptosList, refetch, isFetching } = useGetCryptosQuery(count);
+  const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [filteredCryptos, setFilteredCryptos] = useState();
   const [cryptos, setCryptos] = useState([]);
 
-  /* refetch the data after 15s */
-  useEffect(() => {
-    const refreshDataInterval = setInterval(() => {
-      console.log("refreshing data");
-      // refetch();
-    }, 15000);
+  console.log("Crypto list below");
+  console.log(cryptosList);
 
-    return () => clearInterval(refreshDataInterval);
-  }, [cryptosList]);
+  /* refetch the data after 15s */
+  // useEffect(() => {
+  //   const refreshDataInterval = setInterval(() => {
+  //     console.log("refreshing data");
+  //     // refetch();
+  //   }, 15000);
+
+  //   return () => clearInterval(refreshDataInterval);
+  // }, [cryptosList]);
 
   /* Search functionality */
   useEffect(() => {
@@ -102,18 +105,10 @@ export const Cryptocurrencies = ({ simplified }) => {
     <div className="cryptocurrencies">
       {!simplified && (
         <div className="search-crypto">
-          <input
-            placeholder="Search Cryptocurrencies"
-            type="text"
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+          <input placeholder="Search Cryptocurrencies" type="text" onChange={(e) => setSearchTerm(e.target.value)} />
         </div>
       )}
-      <CoinList
-        cryptos={cryptos}
-        sortColumn={sortColumn}
-        sortOrder={sortOrder}
-      />
+      <CoinList cryptos={cryptos} sortColumn={sortColumn} sortOrder={sortOrder} />
     </div>
   );
 };

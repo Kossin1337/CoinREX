@@ -20,6 +20,9 @@ export const NavbarMenu = ({ menuActive }) => {
           <NavLink to="/cryptocurrencies">Cryptocurrencies</NavLink>
         </li>
         <li className="menu-item">
+          <NavLink to="/exchanges">Exchanges</NavLink>
+        </li>
+        <li className="menu-item">
           <NavLink to="/news">News</NavLink>
         </li>
         {isAuthenticated ? (
